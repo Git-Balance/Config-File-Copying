@@ -1,0 +1,13 @@
+/* colors */
+
+* {
+  al:    #00000000;
+  se:    #B020F8FF;
+  bo:    #0000008F;
+  bg:    #000000EE;
+  cOG:   #FF8F00FF; /* Orange */
+  bg2:   #FFA000FF; /* Slightly lighter orange? */
+  bg3:   #FFB300FF; /* Even lighter orange */
+  bg4:   #FFC107FF; /* These are just oranges */
+  fg:    #FFFFFFFF;
+}
