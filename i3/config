@@ -333,7 +333,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Brightness controls
-# These don't work because I haven't set up the brightness keys on this Arch install yet
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
@@ -349,7 +348,14 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 bindsym $mod+F1 exec setxkbmap -layout us
 bindsym $mod+F2 exec setxkbmap -layout es
 
+# Clipboard Project
+include $HOME/Documents/Scripts/i3-clipboard-project/clipboard.conf
+
+# Autorun commands
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh & disown
-exec_always feh --bg-scale ~/Pictures/Wallpapers/Words\ Of\ Radiance.jpg & disown
+exec_always feh --bg-scale --randomize ~/Pictures/Wallpapers/* & disown
 exec_always picom --config $HOME/.config/i3/picom.conf & disown
 exec_always xinput set-prop "MSFT0001:01 2808:0101 Touchpad" "libinput Tapping Enabled" 1
+exec_always rfkill unblock wifi
+exec_always export CLIPBOARD_EDITOR=vim
+exec_always export TASKDDATA=/var/lib/taskd

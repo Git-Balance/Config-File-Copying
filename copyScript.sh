@@ -17,7 +17,8 @@ copying()
             rm -rf $fCopy/$location
             mkdir -p $fCopy/$location
             cp -RT $fConfig/$location/ $fCopy/$location/
-        else [ $copySwitch = "upload" ]
+        elif [ $copySwitch = "upload" ]
+        then
             rm -rf $fConfig/$location
             mkdir -p $fConfig/$location
             cp -RT $fCopy/$location/ $fConfig/$location/
